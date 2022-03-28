@@ -1,0 +1,48 @@
+unit frmPrincipal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, cxLookAndFeelPainters, StdCtrls, cxButtons, ExtCtrls;
+
+type
+  TfrmMenu = class(TForm)
+    Panel1: TPanel;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    PopupMenu1: TPopupMenu;
+    CadastroeDispensao1: TMenuItem;
+    BaixaSetor1: TMenuItem;
+    procedure CadastroeDispensao1Click(Sender: TObject);
+    procedure cxButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+uses frmRouparia, frmReqRoupa;
+
+{$R *.dfm}
+
+procedure TfrmMenu.CadastroeDispensao1Click(Sender: TObject);
+begin
+   if frmCadRp = nil then
+      frmCadRp := TfrmCadRp.create(self);
+      frmCadRp.Show;
+end;
+
+procedure TfrmMenu.cxButton2Click(Sender: TObject);
+begin
+  if frmReq = nil then
+     frmReq := TfrmReq.create(self);
+     frmReq.Show;
+end;
+
+end.

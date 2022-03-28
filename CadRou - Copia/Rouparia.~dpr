@@ -1,0 +1,17 @@
+program Rouparia;
+
+uses
+  Forms,
+  frmRouparia in 'C:\Users\HSVP\Desktop\CadRou\Cadastro\frmRouparia.pas' {frmCadRp},
+  dm_mod_dad in 'C:\Users\HSVP\Desktop\CadRou\Conecta\dm_mod_dad.pas' {dmCon: TDataModule},
+  frmReqRoupa in 'C:\Users\HSVP\Desktop\CadRou\Requisição\frmReqRoupa.pas' {frmReq},
+  frmPrincipal in 'C:\Users\HSVP\Desktop\CadRou\Transição(á desconsiderar)\frmPrincipal.pas' {frmMenu};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TdmCon, dmCon);
+  Application.Run;
+end.
